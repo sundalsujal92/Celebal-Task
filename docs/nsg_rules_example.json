@@ -1,0 +1,27 @@
+{
+  "webTierNSG": {
+    "inbound": [
+      {"protocol": "TCP", "port": 80, "source": "Internet"},
+      {"protocol": "TCP", "port": 443, "source": "Internet"}
+    ],
+    "outbound": [
+      {"action": "Deny", "destination": "Internet"}
+    ]
+  },
+  "appTierNSG": {
+    "inbound": [
+      {"protocol": "TCP", "port": 5000, "source": "WebTierPublicIP"}
+    ],
+    "outbound": [
+      {"protocol": "TCP", "port": 1433, "destination": "DBTierPublicIP"}
+    ]
+  },
+  "dbTierNSG": {
+    "inbound": [
+      {"protocol": "TCP", "port": 1433, "source": "AppTierPublicIP"}
+    ],
+    "outbound": [
+      {"action": "Deny", "destination": "Internet"}
+    ]
+  }
+}

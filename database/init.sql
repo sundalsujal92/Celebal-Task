@@ -1,0 +1,9 @@
+CREATE DATABASE ThreeTierDB;
+GO
+USE ThreeTierDB;
+GO
+CREATE TABLE logs (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    message NVARCHAR(255),
+    timestamp DATETIME DEFAULT GETDATE()
+);
