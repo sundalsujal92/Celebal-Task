@@ -1,11 +1,5 @@
 
 
----
-
-### 📘 `README.txt` — Celebal 3-Tier Web Application
-
----
-
 ## 📌 Project Overview
 
 This project demonstrates a **3-Tier Web Application Architecture** with the following components:
